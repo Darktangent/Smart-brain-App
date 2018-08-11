@@ -8,12 +8,10 @@ const signin = require('./controllers/signin')
 const profile = require('./controllers/profile')
 const image =  require('./controllers/image')
 const db = knex({
-  client: 'pg',
-  connection: {
-    host : 'postgresql-reticulated-65952',
-    user : 'postgres',
-    password : '',
-    database : 'smart-brain'
+    client: 'pg',
+    connection: {
+    host : process.env.DATABASE_URL,
+    ssl:true
   }
 });
 
